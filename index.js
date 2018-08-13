@@ -259,23 +259,28 @@ function k19() {
 k19()
 
 // // // Katas 20 - Find and display all cities from lotrCitiesArray that end with "or"
-{
-    function k20() {
-        let destination = document.getElementById("Katas20");
-        let newP = document.createElement("p");
-        let a = gotCitiesCSV.split(",");
-        let allORCities = [];
-        for (let i = 0; i < lotrCitiesArray.length; i++) {
-            city = lotrCitiesArray[i];
-            if (city.includes)
-        }
-         // let a = JSON.stringify(gotCitiesCSV.split(","));
-        // newP.textContent = a;
 
-        destination.appendChild(newP);
+function k20() {
+    let destination = document.getElementById("Katas20");
+    let newP = document.createElement("p");
+    let a = lotrCitiesArray;
+    let allORCities = [];
+    for (let i = 0; i < a.length; i++) {
+        if (a[i].endsWith("or") == true) {
+            allORCities.push(a[i])
+        }
     }
-    k20()
+
+
+    // let a = JSON.stringify(a);
+    newP.textContent = JSON.stringify(allORCities);
+
+    // let a = gotCitiesCSV.split(",");
+    destination.appendChild(newP);
+
 }
+k20()
+
 
 // // const gotCitiesCSV = "King's Landing,Braavos,Volantis,Old Valyria,Free Cities,Qarth,Meereen";
 // // const lotrCitiesArray = ["Mordor","Gondor","Rohan","Beleriand","Mirkwood","Dead Marshes","Rhun","Harad"];
