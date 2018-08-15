@@ -21,7 +21,7 @@ const bestThing = "The best thing about a boolean is even if you are wrong you a
     function k2() {
         let destination = document.getElementById("Katas2");
         let newP = document.createElement("p");
-        let a = JSON.stringify(bestThing.split(","));
+        let a = JSON.stringify(bestThing.split(" "));
         newP.textContent = a;
         destination.appendChild(newP);
     }
@@ -259,7 +259,7 @@ function k19() {
 k19()
 
 // // // Katas 20 - Find and display all cities from lotrCitiesArray that end with "or"
-
+{
 function k20() {
     let destination = document.getElementById("Katas20");
     let newP = document.createElement("p");
@@ -270,47 +270,194 @@ function k20() {
             allORCities.push(a[i])
         }
     }
-
-
-    // let a = JSON.stringify(a);
     newP.textContent = JSON.stringify(allORCities);
-
-    // let a = gotCitiesCSV.split(",");
-    destination.appendChild(newP);
+     destination.appendChild(newP);
 
 }
 k20()
+}
 
-
-// // const gotCitiesCSV = "King's Landing,Braavos,Volantis,Old Valyria,Free Cities,Qarth,Meereen";
-// // const lotrCitiesArray = ["Mordor","Gondor","Rohan","Beleriand","Mirkwood","Dead Marshes","Rhun","Harad"];
-// // const bestThing = "The best thing about a boolean is even if you are wrong you are only off by a bit"
 // // // Katas 21 - Find and display all the words in bestThing that start with a "b"
+{
+    function k21() {
+        let destination = document.getElementById("Katas21");
+        let newP = document.createElement("p");
+        let a = lotrCitiesArray;
+        let allORCities = [];
+        for (let i = 0; i < a.length; i++) {
+            if (a[i].startsWith("B") == true) {
+                allORCities.push(a[i])
+            }
+        }
+        newP.textContent = JSON.stringify(allORCities);
+         destination.appendChild(newP);
+    
+    }
+    k21()
+    }
 
-// // // Katas 22 - Display "Yes" or "No" if lotrCitiesArray includes "Mirkwood"
-
-// {
-//     function k22() {
-//         let destination = document.getElementById("Katas22");
-//         let newP = document.createElement("p");
-//         if (lotrCitiesArray.includes("Mirkwood" === true) 
-//             let a = alert("yes");
-//         }
-//         newP.textContent  = a;
-//         destination.appendChild(newP);
-//     }
-//     k22()
-// }
-
-
+    // // // Katas 22 - Display "Yes" or "No" if lotrCitiesArray includes "Mirkwood"
+{
+    function k22() {
+        let destination = document.getElementById("Katas22");
+        let newP = document.createElement("p");
+        let a = lotrCitiesArray;
+        for (let i = 0; i < a.length; i++) {
+            if (a[i].includes("Mirkwood") == true) {
+                // allORCities.push(a[i])
+                newP.textContent = true;
+                destination.appendChild(newP);
+            }
+        }
+    
+    }
+    k22()
+}
 
 // Katas 23 - Display "Yes" or "No" if lotrCitiesArray includes "Hollywood"
+{
+    function k23() {
+        let destination = document.getElementById("Katas23");
+        let newP = document.createElement("p");
+        let a = lotrCitiesArray;
+        for (let i = 0; i < a.length; i++) {
+            if (a[i].includes("Hollywood") == true) {
+                // allORCities.push(a[i])
+                newP.textContent = true;
+            }
+            else {
+                newP.textContent = false;
+            }
+            destination.appendChild(newP);
+        }
+    }
+    k23()
+}
 // Katas 24 - Display the index of "Mirkwood" in lotrCitiesArray
-// Find and display the first city in lotrCitiesArray that has more than one word
-// Reverse the order in lotrCitiesArray
-// Sort lotrCitiesArray alphabetically
-// Sort lotrCitiesArray by the number of characters in each city (i.e., shortest city names go first)
-// Using pop, remove the last city from lotrCitiesArray
-// Using push, add back the city from lotrCitiesArray that was removed in #29 to the back of the array
-// Using shift, remove the first city from lotrCitiesArray
-// Using unshift, add back the city from lotrCitiesArray that was removed in #31 to the front of the array
+{
+    function k24() {
+        let destination = document.getElementById("Katas24");
+        let newP = document.createElement("p");
+        const mirkwoodIndex = lotrCitiesArray.indexOf("Mirkwood");
+        newP.textContent = mirkwoodIndex;
+        destination.appendChild(newP);
+            }
+}
+      k24()
+
+    //   const gotCitiesCSV = "King's Landing,Braavos,Volantis,Old Valyria,Free Cities,Qarth,Meereen";
+    //   const lotrCitiesArray = ["Mordor", "Gondor", "Rohan", "Beleriand", "Mirkwood", "Dead Marshes", "Rhun", "Harad"];
+    //   const bestThing = "The best thing about a boolean is even if you are wrong you are only off by a bit";
+
+
+// Katas 25 - Find and display the first city in lotrCitiesArray that has more than one word
+
+    function k25(k) {
+
+        let destination = document.getElementById("Katas25");
+        let newP = document.createElement("p");
+        for (let i = 0; i < lotrCitiesArray.length; i++) {
+      
+            if (lotrCitiesArray[i].includes(" ")) {  
+              let word = lotrCitiesArray[i];  
+              let a = JSON.stringify(word);
+              newP.textContent = a;
+              destination.appendChild(newP);
+              break;
+            }
+    }
+}
+k25()   
+
+// Katas 26 - Reverse the order in lotrCitiesArray
+{
+    function k26() {
+        let destination = document.getElementById("Katas26");
+        let newP = document.createElement("p");
+        let a = JSON.stringify(lotrCitiesArray.reverse());
+        newP.textContent = a;
+        destination.appendChild(newP);
+    }
+    k26()
+}
+
+// Katas 27 - Sort lotrCitiesArray alphabetically
+{
+    function k27() {
+        let destination = document.getElementById("Katas27");
+        let newP = document.createElement("p");
+        let a = JSON.stringify(lotrCitiesArray.sort());
+        newP.textContent = a;
+        destination.appendChild(newP);
+    }
+    k27()
+}
+// Katas 28 - Sort lotrCitiesArray by the number of characters in each city (i.e., shortest city names go first)
+    function k28() {
+        let destination = document.getElementById("Katas28");
+        let newP = document.createElement("p");
+        for (let i = 0; i < lotrCitiesArray.length; i++) {
+        const newArray = JSON.stringify(lotrCitiesArray.sort(function(a, b) {
+            return a.length - b.length}))
+        newP.textContent = newArray;
+        destination.appendChild(newP);
+        }
+    }
+    k28()
+
+// Katas 29 - Using pop, remove the last city from lotrCitiesArray
+{
+    function k29() {
+        let destination = document.getElementById("Katas29");
+        let newP = document.createElement("p");
+        let v = lotrCitiesArray.pop();
+        let a = JSON.stringify(lotrCitiesArray);
+        newP.textContent = a;
+        destination.appendChild(newP);
+    }
+    k29()
+}
+
+// Katas 30 - Using push, add back the city from lotrCitiesArray that was removed in #29 to the back of the array
+{
+    function k30() {
+        let destination = document.getElementById("Katas30");
+        let newP = document.createElement("p");
+        let v = lotrCitiesArray.push("Rohan");
+        let a = JSON.stringify(lotrCitiesArray);
+        newP.textContent = a;
+        destination.appendChild(newP);
+    }
+    k30()
+}
+
+// Katas 31 - Using shift, remove the first city from lotrCitiesArray
+{
+    function k31() {
+        let destination = document.getElementById("Katas31");
+        let newP = document.createElement("p");
+        let v = lotrCitiesArray.shift();
+        let a = JSON.stringify(lotrCitiesArray);
+        newP.textContent = a;
+        destination.appendChild(newP);
+    
+    }
+    k31()
+}
+// Katas 32 - Using unshift, add back the city from lotrCitiesArray that was removed in #31 to the front of the array (do I know where)
+
+    function k32() {
+        lotrCitiesArray.unshift("Beleriand");
+        createKataElement(32, JSON.stringify(lotrCitiesArray))
+    }
+    k32()
+
+    function createKataElement (kataNumber, content) {
+        const destination = document.createElement("div")
+        destination.id = "Katas" + kataNumber;
+        destination.textContent="Katas " + kataNumber + ":"
+        const kataP = document.createElement("p")
+        kataP.textContent = content 
+        destination.appendChild(kataP)
+        document.body.appendChild(destination)
+    }
